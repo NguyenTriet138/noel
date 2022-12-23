@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button, CardImg, Container} from "react-bootstrap";
+import {Button, CardImg, Container, Image} from "react-bootstrap";
 import './first_screen.css';
 import {Draggable} from "gsap/Draggable";
 import {gsap} from "gsap";
@@ -141,6 +141,7 @@ const FirstScreen = () => {
             {/*       style={{position : "absolute", top : 0}}>*/}
             {/*    <source src={`${process.env.PUBLIC_URL}/music.mp3`}/>*/}
             {/*</audio>*/}
+
             <svg id="loveSliderSVG" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg"
                  preserveAspectRatio="xMidYMid meet">
                 <defs></defs>

@@ -64,7 +64,7 @@ const ReceiveGift = () => {
         {
             id: 'gift9',
             name: 'Mặt nạ',
-            img_url: '/mat_na.webp',
+            img_url: '/mat_na.png',
             img_gift_url: '/gift-pink.png'
         },
     ]);

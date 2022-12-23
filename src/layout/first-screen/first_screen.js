@@ -11,6 +11,7 @@ const FirstScreen = () => {
     let followerVX = 0;
     let trackTween = null;
     const select = e => document.querySelector(e);
+
     gsap.registerPlugin(Draggable);
 
 

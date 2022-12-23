@@ -9,7 +9,7 @@ const FirstScreen = () => {
     let maxDrag = 705;
     let heartFillMaxPosY = -50;
     let followerVX = 0;
-    let trackTween = null;
+    // let trackTween = null;
     const select = e => document.querySelector(e);
 
     gsap.registerPlugin(Draggable);
@@ -32,10 +32,10 @@ const FirstScreen = () => {
             let percent = progress * 100;
             let percentY = progress * heartFillMaxPosY;
             console.log(`0% ${percent}%`)
-            trackTween = gsap.to('.track', {
-                drawSVG: `100% ${percent}%`,
-                ease: 'elastic(0.4, 0.16)'
-            })
+            // trackTween = gsap.to('.track', {
+            //     drawSVG: `100% ${percent}%`,
+            //     ease: 'elastic(0.4, 0.16)'
+            // })
 
             gsap.to('.heartFill', {
                 duration: 0.1,

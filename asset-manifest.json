@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/noel/static/css/main.e4831483.css",
+    "main.js": "/noel/static/js/main.78880bba.js",
+    "static/js/787.cf22b4b8.chunk.js": "/noel/static/js/787.cf22b4b8.chunk.js",
+    "static/media/ChristmasMagic-OVJGe.ttf": "/noel/static/media/ChristmasMagic-OVJGe.d76df30d1da6cf29b129.ttf",
+    "index.html": "/noel/index.html",
+    "main.e4831483.css.map": "/noel/static/css/main.e4831483.css.map",
+    "main.78880bba.js.map": "/noel/static/js/main.78880bba.js.map",
+    "787.cf22b4b8.chunk.js.map": "/noel/static/js/787.cf22b4b8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e4831483.css",
+    "static/js/main.78880bba.js"
+  ]
+}

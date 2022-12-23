@@ -22,25 +22,25 @@ const ReceiveGift = () => {
         {
             id: 'gift2',
             name: 'Trà sữa ( <= 50.000 VNĐ)',
-            img_url: '/tra_sua_binh_thuong.png',
+            img_url: '/tra_sua_binh_thuong_ok.png',
             img_gift_url: '/gift-red-box-and-gold-bow-cutout_8477322_223.png'
         },
         {
             id: 'gift3',
             name: 'Nước tẩy trang( dung tích  > 150 ml)',
-            img_url: '/nuoc-tay-trang-xanh.jpg',
+            img_url: '/nuoc-tay-trang-xanh.png',
             img_gift_url: '/gift-1.png'
         },
         {
             id: 'gift4',
             name: 'Mũ vải',
-            img_url: '/mu-bucket-vanh-cup-nhung-gan-768x768.jpg',
+            img_url: '/mu-bucket-vanh-cup-nhung-gan-768x768.png',
             img_gift_url: '/gift-blue.png'
         },
         {
             id: 'gift5',
             name: '150.000 hiện kim',
-            img_url: '/3d-gold-coin-png.webp',
+            img_url: '/3d-gold-coin-png-ok.png',
             img_gift_url: '/gift-black-box-and-gold-bow-cutout_8477266_533.png'
         },
         {
@@ -91,16 +91,16 @@ const ReceiveGift = () => {
     }
 
     useEffect(() => {
-        get(ref(database, '/event'))
-            .then(snapshot => {
-                if (snapshot.exists()) {
-                    for (const [key, value] of Object.entries(snapshot.val())) {
-                        console.log(key);
-                        console.log(value);
-                        if (value.owner == 'Triet') navigator('/my-wish');
-                    }
-                }
-            })
+        // get(ref(database, '/event'))
+        //     .then(snapshot => {
+        //         if (snapshot.exists()) {
+        //             for (const [key, value] of Object.entries(snapshot.val())) {
+        //                 console.log(key);
+        //                 console.log(value);
+        //                 if (value.owner == 'Triet') navigator('/my-wish');
+        //             }
+        //         }
+        //     })
         renderSnowAnimation();
         setTimeout(() => {
             setDetailShow(true);

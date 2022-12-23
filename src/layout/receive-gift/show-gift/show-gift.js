@@ -31,8 +31,6 @@ const ShowGift = (props) => {
                                         <CardImg className='gift_show-gift' src={process.env.PUBLIC_URL + gift.img_url}/>
                                     )
                             })}
-                            {/*<CardImg className='gift_show-gift' src={process.env.PUBLIC_URL +'/phuc_long-removebg-preview.png'}/>*/}
-                            {/*<CardImg className='gift_show-gift' src={process.env.PUBLIC_URL +'/tra_sua_binh_thuong.png'}/>*/}
                             {/*<CardImg className='gift_show-gift' src={process.env.PUBLIC_URL +'/nuoc-tay-trang-xanh.jpg'}/>*/}
                             {/*<CardImg className='gift_show-gift' src={process.env.PUBLIC_URL +'/mu-bucket-vanh-cup-nhung-gan-768x768.jpg'}/>*/}
                         </div>

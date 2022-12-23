@@ -17,13 +17,8 @@ const Home = () => {
     return (
         <Container fluid className='h-100 p-0'>
             <div className='d-flex  justify-content-center align-items-center h-100'
-                 style={!isMessageShow ? {backgroundImage : `url(${process.env.PUBLIC_URL}/background.webp)`, backgroundSize : 'cover', } :
-                     {backgroundImage : `url(${process.env.PUBLIC_URL}/background-page1.png)`, backgroundSize : 'cover', backgroundPosition : 'bottom', backgroundRepeat : 'no-repeat'}}>
+                 style= {{backgroundImage: `url(${process.env.PUBLIC_URL}/background.webp)`, backgroundSize: 'cover'} }>
                 {
-                    isMessageShow
-                        ?
-                    <CardImg src={process.env.PUBLIC_URL + '/envelope-with-love.png'} className='envelope' onClick={() => setIsMessageShow(true)}/>
-                        :
                     <div className='container-letter'>
                             <div className='custom-paragraph'>
                                 <p>Nhân dịp dáng sinh, và lời hứa tặng Nô 1 món quà sau thi xong. Tôi có tự làm 1 trang web nhỏ nhỏ, đây là tâm huyết của tôi trong 2 tuần qua, hi vọng Bé Nô thích ❤.</p>

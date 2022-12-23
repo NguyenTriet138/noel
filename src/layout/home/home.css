@@ -1,0 +1,39 @@
+.message-box {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container-letter {
+    width: 65%;
+    margin-left: auto !important;
+    padding-right: 200px;
+}
+
+.custom-paragraph {
+    font-family: 'my-font' !important;
+    font-size: 25px !important;
+    color: white;
+}
+
+.custom-paragraph > p {
+    text-align: left;
+}
+
+@keyframes vibrate {
+    0% {}
+    25% {transform: rotate(5deg)}
+    50% {transform: rotate(-5deg)}
+    75% {transform: rotate(-5deg)}
+    100% {}
+}
+
+.envelope {
+    width: 40% !important;
+    height: 40% !important;
+    margin-bottom : 170px !important;
+    cursor: pointer;
+    animation-name : vibrate;
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+}
+

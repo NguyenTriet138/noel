@@ -1,0 +1,74 @@
+.christmas-tree {
+    width: 100%;
+    height: 100%;
+}
+
+.container-image {
+    position: relative;
+    width: 30%;
+    height: 80%;
+}
+
+@keyframes vibrate {
+    0% {}
+    25% {transform: rotate(5deg)}
+    50% {transform: rotate(-5deg)}
+    75% {transform: rotate(-5deg)}
+    100% {}
+}
+
+
+.gift {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    animation-name : vibrate;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+}
+
+.gifts-decorate {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+.gifts-decorate-2 {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+}
+
+.modal-custom-image {
+    padding: 0 !important;
+}
+
+.custom-modal modal-content {
+    width: 450px !important;
+    height: 450px !important;
+}
+
+.modal-40w {
+    width : 40% !important;
+}
+
+@keyframes move-to-bottom {
+    0% {top : 20px}
+    10% {top : 60px}
+    20% {top : 100px}
+    30% {top : 140px}
+    40% {top : 180px}
+    50% {top : 220px}
+    60% {top : 260px}
+    70% {top : 300px}
+    80% {top : 340px}
+    90% {top : 380px}
+    100% {top : 400px}
+}
+
+.snow {
+    position: absolute;
+    animation-name: move-to-bottom;
+    animation-iteration-count: infinite;
+}

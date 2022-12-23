@@ -1,0 +1,28 @@
+.cloud_message_box {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    text-align: left;
+}
+
+@keyframes vibrate {
+    0% {}
+    25% {transform: rotate(5deg)}
+    50% {transform: rotate(-5deg)}
+    75% {transform: rotate(-5deg)}
+    100% {}
+}
+
+.letter_scroll {
+    cursor: pointer;
+    animation-name : vibrate;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+}
+
+
+.custom-paragraph-my-wish {
+    font-family: 'my-font' !important;
+    font-size: 17px !important;
+    color: black;
+}

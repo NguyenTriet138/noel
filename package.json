@@ -1,7 +1,7 @@
 {
   "name": "noelapp",
   "version": "0.1.0",
-  "homepage": "https://nhatcuongti.github.io/noel-app",
+  "homepage": "https://NguyenTriet138.github.io/noel",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

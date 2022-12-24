@@ -5,13 +5,14 @@ import {Draggable} from "gsap/Draggable";
 import {gsap} from "gsap";
 import {useNavigate} from "react-router-dom";
 const FirstScreen = () => {
+    const [dashOffset, setDashOffset] = useState("0");
+    const [dashArray, setDashArray] = useState("none");
     const navigator = useNavigate();
     let maxDrag = 705;
     let heartFillMaxPosY = -50;
     let followerVX = 0;
     // let trackTween = null;
     const select = e => document.querySelector(e);
-
     gsap.registerPlugin(Draggable);
 
 
@@ -31,7 +32,16 @@ const FirstScreen = () => {
             })
             let percent = progress * 100;
             let percentY = progress * heartFillMaxPosY;
+            if (posX == 0) {
+                setDashOffset("0");
+                setDashArray("none");
+            } else {
+                setDashOffset("-" + posX);
+
+                setDashArray(`${700 - posX}px, ${posX + 0.1}px`);
+            }
             console.log(`0% ${percent}%`)
+
             // trackTween = gsap.to('.track', {
             //     drawSVG: `100% ${percent}%`,
             //     ease: 'elastic(0.4, 0.16)'
@@ -141,7 +151,7 @@ const FirstScreen = () => {
             {/*       style={{position : "absolute", top : 0}}>*/}
             {/*    <source src={`${process.env.PUBLIC_URL}/music.mp3`}/>*/}
             {/*</audio>*/}
-
+            <Image hidden src={`${process.env.PUBLIC_URL}/background.webp`}/>
             <svg id="loveSliderSVG" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg"
                  preserveAspectRatio="xMidYMid meet">
                 <defs></defs>
@@ -150,6 +160,7 @@ const FirstScreen = () => {
                 <line className="trackMiddle" x1="50" x2="750" y1="366" y2="366" stroke="green" strokeLinecap="round"
                       strokeLinejoin="round" strokeWidth="6" opacity="1"/>
                 <line className="track" x1="50" x2="750" y1="366" y2="366" stroke="#ff595e" strokeLinecap="round"
+                      style={{strokeDashoffset : dashOffset, strokeDasharray : dashArray}}
                       strokeLinejoin="round" strokeWidth="6"/>
                 <g id="heartChat" className="heartChat">
                     <path

@@ -6,6 +6,8 @@ import {uid} from "uid";
 import {ref, set, get} from "firebase/database";
 import database from "../../firebase";
 import {useNavigate} from "react-router-dom";
+import GiftBox from "../gift-box/gift_box";
+import $ from 'jquery';
 
 const ReceiveGift = () => {
     const navigator = useNavigate();
@@ -82,26 +84,43 @@ const ReceiveGift = () => {
         return array;
     }
 
-    const renderSnowAnimation = () => {
-        const sizeRandom = getRandomArray(15, 30);
-        const numberSnow = 30;
-        const topPosition = [];
-        const bottomPosition = [];
+    const snow = (num, speed) => {
+        if (num > 0) {
+            setTimeout(function () {
+                $("#drop_" + randomInt(1, 150)).addClass("animate");
+                num--;
+                snow(num, randomInt(150, 500));
+            }, speed);
+        }
+    }
+    const snowDrop = (num, position) => {
+        if (num == 0) snow(150, 300)
+        else if (num > 0) {
+            let drop = '<div class="drop-custom snow" id="drop_' + num + '"></div>';
+            $('#container-box').append(drop);
+            $('#drop_' + num).css('left', `${position}%`);
 
+            num--;
+            snowDrop(num, randomInt(0, 100));
+        }
+    }
+
+    const randomInt = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
     useEffect(() => {
-        // get(ref(database, '/event'))
-        //     .then(snapshot => {
-        //         if (snapshot.exists()) {
-        //             for (const [key, value] of Object.entries(snapshot.val())) {
-        //                 console.log(key);
-        //                 console.log(value);
-        //                 if (value.owner == 'Triet') navigator('/my-wish');
-        //             }
-        //         }
-        //     })
-        renderSnowAnimation();
+        snowDrop(150, randomInt(0, 100));
+        get(ref(database, '/event'))
+            .then(snapshot => {
+                if (snapshot.exists()) {
+                    for (const [key, value] of Object.entries(snapshot.val())) {
+                        console.log(key);
+                        console.log(value);
+                        if (value.owner == 'Triet') navigator('/my-wish');
+                    }
+                }
+            })
         setTimeout(() => {
             setDetailShow(true);
         }, 3000)
@@ -133,11 +152,14 @@ const ReceiveGift = () => {
         setTimeout(() => {
             setModalShow(false);
             setModalGiftShow(true);
-        }, 2000)
+        }, 2500)
     }
     const [isDetailShow, setDetailShow] = useState(false);
     return (
         <Container fluid className='h-100 p-0'>
+            <Image hidden src={`${process.env.PUBLIC_URL}/tra_sua_binh_thuong_ok.png`}/>
+            <Image hidden src={`${process.env.PUBLIC_URL}/tra_sua_phuc_long.png`}/>
+            <Image hidden src={`${process.env.PUBLIC_URL}/Santa-Claus-Father.png`}/>
             <div hidden={isDetailShow}
                  style={{backgroundImage : `url(${process.env.PUBLIC_URL}/loading.gif)`,
                          width : '100%', height : '100%', backgroundSize : 'cover'}}>
@@ -146,6 +168,7 @@ const ReceiveGift = () => {
             <div hidden={!isDetailShow}
                  className='h-100 w-100'>
                 <Container fluid className='d-flex justify-content-center align-items-center h-100'
+                           id={'container-box'}
                            style={{
                                backgroundImage: `url(${process.env.PUBLIC_URL}/christmas-background-illustrator.png)`,
                                backgroundPosition: '0% 90%', backgroundSize: 'cover', position: 'relative'
@@ -193,69 +216,6 @@ const ReceiveGift = () => {
 
                         {/*Snow */}
                     </div>
-                    <div  className={'snow'}
-                          style={{top : '0', left : '0', animationDelay : '1s', animationDuration : '4.5s'}}
-                          width={15} height={15}/>
-                    <div  className={'snow'}
-                          style={{top : '0', left : '30px', animationDelay : '0', animationDuration : '3s'}}
-                          width={20} height={20}/>
-                    <div  className={'snow'}
-                          style={{top : '0', left : '100px', animationDelay : '0.5s', animationDuration : '3s'}}
-                          width={20} height={20}/>
-                    <div  className={'snow'}
-                          style={{top : '0', left : '200px', animationDelay : '0.3s', animationDuration : '2s'}}
-                          width={17} height={17}/>
-                    <div  className={'snow'}
-                          style={{top : '0', left : '300px', animationDelay : '1.4s', animationDuration : '5.5s'}}
-                          width={18} height={18}/>
-                    <div  className={'snow'}
-                          style={{top : '0', left : '400px', animationDelay : '0', animationDuration : '3.5s'}}
-                          width={23} height={23}/>
-                    <div  className={'snow'}
-                          style={{top : '0', left : '500px', animationDelay : '0', animationDuration : '3s'}}
-                          width={21} height={21}/>
-
-                    <div  className={'snow'}
-                          style={{top : '0', right : '500px', animationDelay : '0', animationDuration : '2.5s'}}
-                          width={23} height={23}/>
-
-                    <div  className={'snow'}
-                          style={{top : '0', right : '450px', animationDelay : '2s', animationDuration : '2s'}}
-                          width={25} height={25}/>
-
-                    <div  className={'snow'}
-                          style={{top : '0', right : '400px', animationDelay : '1.5s', animationDuration : '2s'}}
-                          width={17} height={17}/>
-
-                    <div  className={'snow'}
-                          style={{top : '0', right : '300px', animationDelay : '2s', animationDuration : '3.5s'}}
-                          width={18} height={18}/>
-
-                    <div  className={'snow'}
-                          style={{top : '0', right : '200px', animationDelay : '1s', animationDuration : '4.5s'}}
-                          width={23} height={23}/>
-
-                    <div  className={'snow'}
-                          style={{top : '0', right : '100px', animationDelay : '0.5s', animationDuration : '3s'}}
-                          width={19} height={19}/>
-
-                    <div  className={'snow'}
-                          style={{top : '0', right : '50px', animationDelay : '1s', animationDuration : '2.5s'}}
-                          width={16} height={16}/>
-
-
-                    <div  className={'snow'}
-                          style={{top : '0', right : '5px', animationDelay : '3s', animationDuration : '2s'}}
-                          width={20} height={20}/>
-
-                    <div   className={'snow'}
-                           width={400} height={400}
-                           style={{position: "absolute", bottom: '5%', right: '5%'}}/>
-
-                    <div   className={'snow'}
-                           width={250} height={250}
-                           style={{position: "absolute", bottom: '5%', left: '5%'}}/>
-
                     <Image src={process.env.PUBLIC_URL + '/santa-claus-png-0.png'}
                            width={400} height={400}
                            style={{position: "absolute", bottom: '5%', right: '5%'}}/>
@@ -270,8 +230,9 @@ const ReceiveGift = () => {
                         dialogClassName='modal-40w'
                         centered>
                         <Modal.Body className='modal-custom-image'>
-                            <Image src={process.env.PUBLIC_URL + '/gift-cai-bup-ok.gif'}
-                                   style={{width: '100%', height: '100%'}}/>
+                            {/*<Image src={process.env.PUBLIC_URL + '/gift-cai-bup-ok.gif'}*/}
+                            {/*       style={{width: '100%', height: '100%'}}/>*/}
+                            <GiftBox style={{width : '100%', height : '100%'}}/>
                         </Modal.Body>
                     </Modal>
 

@@ -7,12 +7,12 @@ import React from "react";
 function App() {
     return (
         <div className="App h-100">
-
-            <Image hidden src={`${process.env.PUBLIC_URL}/christmas-background-illustrator.png`}/>
-            <Image hidden src={`${process.env.PUBLIC_URL}/bg-my-wish.png`}/>
-            <Image hidden src={`${process.env.PUBLIC_URL}/mat_na.png`}/>
-            <Image hidden src={`${process.env.PUBLIC_URL}/bong_tai.png`}/>
-            <Image hidden src={`${process.env.PUBLIC_URL}/loading.gif`}/>
+            {/*<Image hidden src={`${process.env.PUBLIC_URL}/christmas-background-illustrator.png`}/>*/}
+            {/*<Image hidden src={`${process.env.PUBLIC_URL}/bg-my-wish.png`}/>*/}
+            {/*<Image hidden src={`${process.env.PUBLIC_URL}/background.webp`}/>*/}
+            {/*<Image hidden src={`${process.env.PUBLIC_URL}/loading.gif`}/>*/}
+            {/*<Image hidden src={`${process.env.PUBLIC_URL}/mat_na.png`}/>*/}
+            {/*<Image hidden src={`${process.env.PUBLIC_URL}/bong_tai.png`}/>*/}
 
             <Routes>
                 {publicRoutes.map((route, index) => {

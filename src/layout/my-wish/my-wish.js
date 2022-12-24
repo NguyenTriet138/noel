@@ -41,71 +41,76 @@ const MyWish = () => {
                  backgroundPositionX : '0%', backgroundPositionY : '10%', backgroundRepeat : 'no-repeat'}}>
 
                 {/*Background*/}
+                <div className="stars"
+                     style={{background : `#000 url(${process.env.PUBLIC_URL}/stars.png) repeat top center`}}>
+
+                </div>
+
                 {/*Moon */}
                 <Image src={`${process.env.PUBLIC_URL}/moon.png`}
-                       style={{position : 'absolute', left : '35%', top : '0',
+                       style={{position : 'absolute', left : '33%', top : '0',
                            width : '20%', height : '35%',}}/>
 
                 {/*Santa with sleigh */}
                 <Image src={`${process.env.PUBLIC_URL}/santa_with_sleigh.png`}
-                       style={{position : 'absolute', left : '40%', top : '90px',
+                       style={{position : 'absolute', left : '37%', top : '90px',
                            width : '10%', height : '10%',}}/>
 
                 {/*List star */}
                 <Image src={`${process.env.PUBLIC_URL}/star-1.png`}
                        style={{position : 'absolute', left : '0', top : '0',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-2.png`}
                        style={{position : 'absolute', left : '0', top : '10%',
-                           width : '8%', height : '8%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-3.png`}
                        style={{position : 'absolute', left : '10%', top : '0',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-4.png`}
                        style={{position : 'absolute', left : '10%', top : '20%',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-1.png`}
                        style={{position : 'absolute', left : '20%', top : '15%',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-2.png`}
                        style={{position : 'absolute', left : '5%', top : '30%',
-                           width : '8%', height : '8%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-3.png`}
                        style={{position : 'absolute', left : '17%', top : '25%',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-4.png`}
                        style={{position : 'absolute', right : '20%', top : '0',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-1.png`}
                        style={{position : 'absolute', right : '10%', top : '5%',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-2.png`}
                        style={{position : 'absolute', right : '0%', top : '0',
-                           width : '8%', height : '8%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-3.png`}
                        style={{position : 'absolute', right : '30%', top : '10%',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-4.png`}
                        style={{position : 'absolute', right : '15%', top : '17%',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-1.png`}
                        style={{position : 'absolute', right : '36%', top : '20%',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-5.png`}
                        style={{position : 'absolute', right : '25%', top : '20%',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-5.png`}
                        style={{position : 'absolute', right : '40%', top : '30%',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-2.png`}
                        style={{position : 'absolute', right : '0', top : '30%',
-                           width : '8%', height : '8%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-3.png`}
                        style={{position : 'absolute', right : '20%', top : '34%',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
                 <Image src={`${process.env.PUBLIC_URL}/star-5.png`}
                        style={{position : 'absolute', top : '10%', left : '30%',
-                           width : '4%', height : '4%',}}/>
+                           width : '3%', height : '3%',}}/>
 
                 {/*Sao bang*/}
                 <Image src={`${process.env.PUBLIC_URL}/sunshine-1.png`}
@@ -140,12 +145,12 @@ const MyWish = () => {
                        onClick={() => onLetterScroolClick()}/>
 
                 {/*letter-detail.webp*/}
-                <Image src={`${process.env.PUBLIC_URL}/letter-detail.webp`}
+                <Image src={`${process.env.PUBLIC_URL}/letter-detail.png`}
                        hidden={!isLetterDetailShow}
-                       style={{position : 'absolute', left : '47%', top : '10%',
+                       style={{position : 'absolute', left : '45%', top : '10%',
                            width : '50%', height : '90%',}}/>
 
-                <div style={{position : 'absolute', top : '33%', left : '57%', width: '30%', height : '60%'}}
+                <div style={{position : 'absolute', top : '33%', left : '55%', width: '32%', height : '60%'}}
                      hidden={!isLetterDetailShow}
                      className='text-start custom-paragraph-my-wish'>
                     <p>Giáng sinh an lành ☃</p>
